@@ -32,5 +32,5 @@ $ docker build -t gb_docker_flask .
 
 Здесь Вам нужно создать каталог локально и сохранить туда предобученную модель (<your_local_path_to_pretrained_models> нужно заменить на полный путь к этому каталогу)
 ```
-$ docker run -d -p 8180:8180 -v <your_local_path_to_pretrained_models>:/app/app/models GB_docker_flask
+$ docker run -d -p 8180:8180 -v <your_local_path_to_pretrained_models>:/app/app/models gb_docker_flask
 ```

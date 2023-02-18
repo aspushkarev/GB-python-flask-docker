@@ -25,7 +25,7 @@ API: flask
 ```
 $ git clone https://github.com/aspushkarev/Training-Data-Science-in-GeekBrains.git
 $ cd GB_docker_flask
-$ docker build -t GB_docker_flask .
+$ docker build -t gb_docker_flask .
 ```
 
 ### Запускаем контейнер

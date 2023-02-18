@@ -35,8 +35,7 @@ def load_model(model_path):
 	return model
 
 # modelpath = "/Users/alexander/docs/Courses/GB/ML_in_business/Lection9/logreg_pipeline.dill"
-# modelpath = "/app/app/model/logreg_pipeline.dill"
-modelpath = "/Users/alexander/Downloads/Training-Data-Science-in-GeekBrains/app/app/model/logreg_pipeline.dill"
+modelpath = "/app/app/models/logreg_pipeline.dill"
 model = load_model(modelpath)
 # load_model(modelpath)
 

@@ -1,5 +1,5 @@
 # python-flask-docker
-Итоговый проект (пример) курса "Машинное обучение в бизнесе"
+Итоговый проект курса "Машинное обучение в бизнесе"
 
 Стек:
 
@@ -32,5 +32,3 @@ $ docker build -t fimochka/gb_docker_flask_example .
 ```
 $ docker run -d -p 8180:8180 -p 8181:8181 -v <your_local_path_to_pretrained_models>:/app/app/models fimochka/gb_docker_flask_example
 ```
-
-### Переходим на localhost:8181

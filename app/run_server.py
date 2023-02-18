@@ -12,12 +12,14 @@ dill._dill._reverse_typemap['ClassType'] = type
 #import cloudpickle
 import flask
 import logging
+import sklearn
+from sklearn.feature_extraction.text import TfidfVectorizer
 from logging.handlers import RotatingFileHandler
 from time import strftime
 
 # initialize our Flask application and the model
 app = flask.Flask(__name__)
-model = None
+# model = None
 
 handler = RotatingFileHandler(filename='app.log', maxBytes=100000, backupCount=10)
 logger = logging.getLogger(__name__)
@@ -26,13 +28,15 @@ logger.addHandler(handler)
 
 def load_model(model_path):
 	# load the pre-trained model
-	global model
+	# global model
 	with open(model_path, 'rb') as f:
 		model = dill.load(f)
 	print(model)
+	return model
 
-modelpath = "/app/app/models/logreg_pipeline.dill"
-load_model(modelpath)
+modelpath = "/Users/alexander/docs/Courses/GB/ML_in_business/Lection9/logreg_pipeline.dill"
+model = load_model(modelpath)
+# load_model(modelpath)
 
 @app.route("/", methods=["GET"])
 def general():
@@ -81,4 +85,4 @@ if __name__ == "__main__":
 	print(("* Loading the model and Flask starting server..."
 		"please wait until server has fully started"))
 	port = int(os.environ.get('PORT', 8180))
-	app.run(host='0.0.0.0', debug=True, port=port)
+	app.run(host='192.168.1.189', debug=True, port=port)
